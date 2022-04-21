@@ -1,12 +1,13 @@
 <?php
 require_once('./RPG/classes/Pokemon.php');
 require_once('./RPG/classes/Enemy.php');
+require_once('./RPG/classes/Electric.php');
 
-$pikachu = new Pokemon();
+$pikachu = new Electric();
 $isitubute = new Enemy();
 
 $pikachu->name = "ピカチュウ";
-$isitubute->name = "イシツブテ";
+$isitubute->name = "ギャラドス";
 
 $turn = 1;
 

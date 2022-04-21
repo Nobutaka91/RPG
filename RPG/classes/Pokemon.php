@@ -2,10 +2,10 @@
 
 class Pokemon
 {
-    const MAX_HITPOINT = 100; // 最大HP
+    const MAX_HITPOINT = 50; // 最大HP
     public $name; // 自パーティのポケモンの名前
     public $hitPoint = 100; // 現在のHP
-    public $attackPoint = 20; // 攻撃力ｚｒｇｈZGRｆ
+    public $attackPoint = 10; // 攻撃力
 
     public function doAttack($enemy)
     {
