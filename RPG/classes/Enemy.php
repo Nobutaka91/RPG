@@ -4,13 +4,13 @@ class Enemy
 {
     const MAX_HITPOINT = 50;
     public $name;
-    public $hitPoint = 100;
+    public $hitPoint = 50;
     public $attackPoint = 10;
 
     public function doAttack($pokemon)
     {
         echo "『" . $this->name . "』の岩落とし! \n";
-        echo "【" .$pokemon->name. "】に" . $this->attackPoint . "のダメージ! \n";
+        echo "【" . $pokemon->name. "】に" . $this->attackPoint . "のダメージ! \n";
         $pokemon->tookDamage($this->attackPoint);
     }
 

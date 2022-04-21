@@ -9,8 +9,8 @@ class Pokemon
 
     public function doAttack($enemy)
     {
-        echo "『" . $this->name . "』の攻撃! \n";
-        echo "【" . $this->enemy . "】に" . $this->attackPoint . "のダメージ! \n";
+        echo "『" . $this->name . "』のでんこうせっか! \n";
+        echo "【" . $enemy->name . "】に" . $this->attackPoint . "のダメージ! \n";
         $enemy->tookDamage($this->attackPoint);
     }
 
@@ -23,20 +23,3 @@ class Pokemon
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-?>
