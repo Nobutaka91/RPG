@@ -2,14 +2,14 @@
 
 class Pokemon
 {
-    const MAX_HITPOINT = 100;
-    public $name;
-    public $hitPoint = 100;
-    public $attackPoint = 20;
+    const MAX_HITPOINT = 100; // 最大HP
+    public $name; // 自パーティのポケモンの名前
+    public $hitPoint = 100; // 現在のHP
+    public $attackPoint = 20; // 攻撃力ｚｒｇｈZGRｆ
 
     public function doAttack($enemy)
     {
-        echo "『" . $this->name . "』の体当たり! \n";
+        echo "『" . $this->name . "』の攻撃! \n";
         echo "【" . $this->enemy . "】に" . $this->attackPoint . "のダメージ! \n";
         $enemy->tookDamage($this->attackPoint);
     }
