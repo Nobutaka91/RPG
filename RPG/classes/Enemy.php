@@ -2,14 +2,17 @@
 
 class Enemy
 {
-    const MAX_HITPOINT = 100;
     private $name;
+    private $maxHitPoint = 100;
     private $hitPoint = 100;
-    private $attackPoint = 10;
+    private $attackPoint = 20;
 
-    public function __construct($name)
+    public function __construct($name, $maxHitPoint, $attackPoint)
     {
         $this->name = $name;
+        $this->maxHitPoint = $maxHitPoint;
+        $this->hitPoint = $maxHitPoint;
+        $this->attackPoint = $attackPoint;
     }
 
     // アクセサーメソッド (外部からprivateプロパティにアクセスするためのメソッド)
@@ -25,6 +28,11 @@ class Enemy
         return $this->hitPoint;
     }
 
+    public function getMaxHitPoint()
+    {
+        return $this->maxHitPoint;
+    }
+
     public function getAttackPoint()
     {
         return $this->attackPoint;
@@ -35,8 +43,8 @@ class Enemy
         if (rand(1, 6) === 6) {
             //強力な技の発動
             echo "『" . $this->getName() . "』のはかいこうせん! \n";
-            echo $pokemon->getName() . "に" . $this->attackPoint * 5 . " のダメージ! \n";
-            $pokemon->tookDamage($this->attackPoint * 5);
+            echo "【 " . $pokemon->getName() . " 】に" . $this->attackPoint * 3 . " のダメージ! \n";
+            $pokemon->tookDamage($this->attackPoint * 3);
         } elseif (rand(1, 10) === 10) {
             //ダメージ0技の発動
             echo "『" . $this->getName() . "』のはねる! \n";
@@ -44,12 +52,12 @@ class Enemy
         } elseif (rand(1, 3) === 3) {
             //ノーマル技の発動
             echo "『" . $this->getName() . "』のたつまき! \n";
-            echo $pokemon->getName() . "に" . $this->attackPoint * 2 . " のダメージ! \n";
-            $pokemon->tookDamage($this->attackPoint * 2);
+            echo "【 " . $pokemon->getName() . "】に" . $this->attackPoint * 1.5 . " のダメージ! \n";
+            $pokemon->tookDamage($this->attackPoint * 1.5);
         } else {
             //ノーマル技の発動
             echo "『" . $this->getName() . "』の体当たり! \n";
-            echo $pokemon->getName() . "に" . $this->attackPoint . " のダメージ! \n";
+            echo "【 " . $pokemon->getName() . "】に" . $this->attackPoint . " のダメージ! \n";
             $pokemon->tookDamage($this->attackPoint);
         }
         return true;

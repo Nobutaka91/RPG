@@ -2,7 +2,7 @@
 
 class Pokemon
 {
-    const MAX_HITPOINT = 50; // 最大HP
+    const MAX_HITPOINT = 100; // 最大HP
     private $name; // 自パーティのポケモンの名前
     private $hitPoint = 100; // 現在のHP
     private $attackPoint = 10; // 攻撃力
@@ -27,6 +27,14 @@ class Pokemon
         // HPが0未満にならないための処理
         if ($this->hitPoint < 0) {
             $this->hitPoint = 0;
+        }
+    }
+
+    public function recoveryDamage($heal, $target)
+    {
+        $this->hitPoint += $heal;
+        if ($this->hitPoint > $target::MAX_HITPOINT) {
+            $this->hitPoint = $target::MAX_HITPOINT;
         }
     }
 
