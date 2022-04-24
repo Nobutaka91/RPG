@@ -14,8 +14,17 @@ class Pokemon
         $this->attackPoint = $attackPoint;
     }
 
-    public function doAttack($enemy)
+    public function doAttack($enemies)
     {
+        // チェック1 : 自信のHPが0かどうか
+        if ($this->getHitPoint() <= 0) {
+            return false;
+        }
+
+        // 配列からランダムに敵1体を決定する
+        $enemyIndex = rand(0, count($enemies) - 1); // 添え字は0から始まるので, -1する
+        $enemy = $enemies[$enemyIndex];
+
         echo "『" . $this->getName() . "』のでんこうせっか! \n";
         echo "【" . $enemy->getName() . "】に" . $this->attackPoint . "のダメージ! \n";
         $enemy->tookDamage($this->attackPoint);

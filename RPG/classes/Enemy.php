@@ -38,8 +38,17 @@ class Enemy
         return $this->attackPoint;
     }
 
-    public function doAttack($pokemon)
+    public function doAttack($pokemons)
     {
+        // チェック1 : 自信のHPが0かどうか
+        if ($this->getHitPoint() <= 0) {
+            return false;
+        }
+
+        // 配列からランダムに攻撃対象1体を決定する
+        $pokemonIndex = rand(0, count($pokemons) - 1); // 添え字は0から始まるので, -1する
+        $pokemon = $pokemons[$pokemonIndex];
+        
         if (rand(1, 6) === 6) {
             //強力な技の発動
             echo "『" . $this->getName() . "』のはかいこうせん! \n";

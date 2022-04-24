@@ -13,7 +13,16 @@ class Electric extends Pokemon
         parent::__construct($name, $this->hitPoint, $this->attackPoint, $this->specialAttack);
     }
 
-    public function doAttack($enemy) {
+    public function doAttack($enemies) {
+
+        // チェック1 : 自信のHPが0かどうか
+        if ($this->getHitPoint() <= 0) {
+            return false;
+        }
+
+        // 配列からランダムに敵1体を決定する
+        $enemyIndex = rand(0, count($enemies) - 1); // 添え字は0から始まるので, -1する
+        $enemy = $enemies[$enemyIndex];
 
         if (rand(1, 5) === 5) {
             //強力な技の発動
@@ -28,7 +37,7 @@ class Electric extends Pokemon
             echo "【 " . $enemy->getName() . " 】に" . $this->specialAttack * 2 . " のダメージ! \n";
             $enemy->tookDamage($this->specialAttack* 2);
         }  else {
-            parent::doAttack($enemy);
+            parent::doAttack($enemies);
         }
         return true;
     }

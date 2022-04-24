@@ -40,13 +40,15 @@ while (!$isFinishing) {
 
     // 味方の攻撃
     foreach ($members as $member) {
-        $enemyIndex = rand(0, count($enemies) - 1); // 添え字は0から始まるので, -1する
-        $enemy = $enemies[$enemyIndex];
+        // 配列からランダムに敵を決定する
+        // $enemyIndex = rand(0, count($enemies) - 1); // 添え字は0から始まるので, -1する
+        // $enemy = $enemies[$enemyIndex];
+
         //Esperタイプの場合、味方のオブジェクトも渡す
         if (get_class($member) == "Esper") {
-            $member->doAttackEsper($enemy, $member);
+            $member->doAttackEsper($enemies, $members);
         } else {
-            $member->doAttack($enemy);
+            $member->doAttack($enemies);
         }
         echo "\n";
     }
@@ -54,9 +56,10 @@ while (!$isFinishing) {
 
     // 敵の攻撃
     foreach ($enemies as $enemy) {
-        $memberIndex = rand(0, count($members) - 1); // 添え字は0から始まるので, -1する
-        $member = $members[$memberIndex];
-        $enemy->doAttack($member);
+        // 配列からランダムに攻撃対象を決定する
+        // $memberIndex = rand(0, count($members) - 1); // 添え字は0から始まるので, -1する
+        // $member = $members[$memberIndex];
+        $enemy->doAttack($members);
         echo "\n";
     }
     echo "\n";
@@ -95,6 +98,7 @@ while (!$isFinishing) {
     $turn++;
 }
 
+echo "\n";
 echo "☆☆☆ 戦闘終了 ☆☆☆ \n\n";
 // 現在のHPの表示
 foreach ($members as $member) {
