@@ -6,7 +6,7 @@ class Esper extends Pokemon
     private $name;
     private $hitPoint = 70;
     private $attackPoint = 10;
-    private $specialAttack = 50;
+    private $specialAttack = 60;
 
     public function __construct($name)
     {
@@ -27,10 +27,6 @@ class Esper extends Pokemon
         // 配列からランダムに回復させる仲間1体を決定する
         $pokemonIndex = rand(0, count($pokemons) - 1); // 添え字は0から始まるので, -1する
         $pokemon = $pokemons[$pokemonIndex];
-
-        // echo "『" . $this->getName() . "』のでんこうせっか! \n";
-        // echo "【" . $enemy->getName() . "】に" . $this->attackPoint . "のダメージ! \n";
-        // $enemy->tookDamage($this->attackPoint);
 
         if (rand(1, 2) === 2) {
             //回復技

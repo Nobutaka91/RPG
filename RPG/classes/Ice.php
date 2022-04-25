@@ -6,7 +6,7 @@ class Ice extends Pokemon
     private $name;
     private $hitPoint = 80;
     private $attackPoint = 20;
-    private $specialAttack = 30;
+    private $specialAttack = 40;
 
     public function __construct($name)
     {
@@ -29,7 +29,7 @@ class Ice extends Pokemon
             //強力な技の発動
             echo "『" . $this->getName() . "』のぜったいれいど! \n";
             echo "いちげき ひっさつ! \n";
-            echo "【 " . $enemy->getName() . " 】はたおれた! \n";
+            echo "【 " . $enemy->getName() . " 】をやっつけた! \n";
             $enemy->tookDamage($enemy->getHitPoint());
         } elseif (rand(1, 3) === 3) {
             //ノーマル技の発動

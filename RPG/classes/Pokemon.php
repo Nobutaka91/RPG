@@ -36,6 +36,7 @@ class Pokemon
         // HPが0未満にならないための処理
         if ($this->hitPoint < 0) {
             $this->hitPoint = 0;
+            echo "【 " . $this->getName() . " 】はたおれた! \n";
         }
     }
 
@@ -58,6 +59,11 @@ class Pokemon
     public function getHitPoint()
     {
         return $this->hitPoint;
+    }
+
+    public function getMaxHitPoint()
+    {
+        return $this->maxHitPoint;
     }
 
     public function getAttackPoint()

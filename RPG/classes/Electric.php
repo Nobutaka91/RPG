@@ -6,7 +6,7 @@ class Electric extends Pokemon
     const MAX_HITPOINT = 100; // 最大HP
     private $hitPoint = self::MAX_HITPOINT; // 現在のHP
     private $attackPoint = 30; //物理攻撃
-    private $specialAttack = 30; //特殊攻撃
+    private $specialAttack = 40; //特殊攻撃
 
     public function __construct($name)
     {
@@ -15,7 +15,7 @@ class Electric extends Pokemon
 
     public function doAttack($enemies) {
 
-        // チェック1 : 自信のHPが0かどうか
+        // チェック1 : 自身のHPが0かどうか
         if ($this->getHitPoint() <= 0) {
             return false;
         }

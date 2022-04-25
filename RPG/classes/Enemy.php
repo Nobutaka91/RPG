@@ -5,7 +5,7 @@ class Enemy
     private $name;
     private $maxHitPoint = 100;
     private $hitPoint = 100;
-    private $attackPoint = 20;
+    private $attackPoint = 30;
 
     public function __construct($name, $maxHitPoint, $attackPoint)
     {
@@ -78,6 +78,7 @@ class Enemy
         // HPが0未満にならないための処理
         if ($this->hitPoint < 0) {
             $this->hitPoint = 0;
+            echo "【 " . $this->getName() . " 】をやっつけた! \n";
         }
     }
 }
