@@ -1,6 +1,6 @@
 <?php 
 
-class Electric extends Pokemon
+class Electric extends Ally
 {
 
     private $maxHitPoint = 100; // 現在のHP

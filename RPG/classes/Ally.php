@@ -1,6 +1,6 @@
 <?php
 
-class Pokemon
+class Ally
 {
     private $name; // 自パーティのポケモンの名前
     private $maxHitPoint = 100; // 現在のHP

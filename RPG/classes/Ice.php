@@ -1,6 +1,6 @@
 <?php 
 
-class Ice extends Pokemon
+class Ice extends Ally
 {
     private $maxHitPoint = 120; // 現在のHP
     private $hitPoint = 120;

@@ -38,7 +38,7 @@ class Enemy
         return $this->attackPoint;
     }
 
-    public function doAttack($pokemons)
+    public function doAttack($allies)
     {
         // チェック1 : 自信のHPが0かどうか
         if ($this->getHitPoint() <= 0) {
@@ -46,14 +46,14 @@ class Enemy
         }
 
         // 配列からランダムに攻撃対象1体を決定する
-        $pokemonIndex = rand(0, count($pokemons) - 1); // 添え字は0から始まるので, -1する
-        $pokemon = $pokemons[$pokemonIndex];
+        $allyIndex = rand(0, count($allies) - 1); // 添え字は0から始まるので, -1する
+        $ally = $allies[$allyIndex];
         
         if (rand(1, 6) === 6) {
             //強力な技の発動
             echo "『" . $this->getName() . "』のはかいこうせん! \n";
-            echo "【 " . $pokemon->getName() . " 】に" . $this->attackPoint * 3 . " のダメージ! \n";
-            $pokemon->tookDamage($this->attackPoint * 3);
+            echo "【 " . $ally->getName() . " 】に" . $this->attackPoint * 3 . " のダメージ! \n";
+            $ally->tookDamage($this->attackPoint * 3);
         } elseif (rand(1, 10) === 10) {
             //ダメージ0技の発動
             echo "『" . $this->getName() . "』のはねる! \n";
@@ -61,13 +61,13 @@ class Enemy
         } elseif (rand(1, 3) === 3) {
             //ノーマル技の発動
             echo "『" . $this->getName() . "』のたつまき! \n";
-            echo "【 " . $pokemon->getName() . "】に" . $this->attackPoint * 1.5 . " のダメージ! \n";
-            $pokemon->tookDamage($this->attackPoint * 1.5);
+            echo "【 " . $ally->getName() . "】に" . $this->attackPoint * 1.5 . " のダメージ! \n";
+            $ally->tookDamage($this->attackPoint * 1.5);
         } else {
             //ノーマル技の発動
             echo "『" . $this->getName() . "』の体当たり! \n";
-            echo "【 " . $pokemon->getName() . "】に" . $this->attackPoint . " のダメージ! \n";
-            $pokemon->tookDamage($this->attackPoint);
+            echo "【 " . $ally->getName() . "】に" . $this->attackPoint . " のダメージ! \n";
+            $ally->tookDamage($this->attackPoint);
         }
         return true;
     }

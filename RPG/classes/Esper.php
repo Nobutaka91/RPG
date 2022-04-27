@@ -1,6 +1,6 @@
 <?php
 
-class Esper extends Pokemon
+class Esper extends Ally
 {
     private $maxHitPoint = 90; // 現在のHP
     private $hitPoint = 90;
@@ -12,7 +12,7 @@ class Esper extends Pokemon
         parent::__construct($name, $this->maxHitPoint, $this->hitPoint, $this->attackPoint, $this->specialAttack);
     }
 
-    public function doAttackEsper($enemies, $pokemons)
+    public function doAttackEsper($enemies, $allies)
     {
         // チェック1 : 自信のHPが0かどうか
         if ($this->getHitPoint() <= 0) {
@@ -24,14 +24,14 @@ class Esper extends Pokemon
         $enemy = $enemies[$enemyIndex];
 
         // 配列からランダムに回復させる仲間1体を決定する
-        $pokemonIndex = rand(0, count($pokemons) - 1); // 添え字は0から始まるので, -1する
-        $pokemon = $pokemons[$pokemonIndex];
+        $allyIndex = rand(0, count($allies) - 1); // 添え字は0から始まるので, -1する
+        $ally = $allies[$allyIndex];
 
         if (rand(1, 2) === 2) {
             //回復技
             echo "『" . $this->getName() . "』の いやしのはどう! \n";
-            echo "【 " . $pokemon->getName() . " 】のHPを" . $this->specialAttack . "回復した \n";
-            $pokemon->recoveryDamage($this->specialAttack, $pokemon);
+            echo "【 " . $ally->getName() . " 】のHPを" . $this->specialAttack . "回復した \n";
+            $ally->recoveryDamage($this->specialAttack, $ally);
         } elseif (rand(1, 3) === 3) {
             //ノーマル技の発動
             echo "『" . $this->getName() . "』のサイコキネシス! \n";

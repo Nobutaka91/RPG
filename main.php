@@ -1,6 +1,6 @@
 <?php
 // ファイルのロード
-require_once('./RPG/classes/Pokemon.php');
+require_once('./RPG/classes/Ally.php');
 require_once('./RPG/classes/Enemy.php');
 require_once('./RPG/classes/Electric.php');
 require_once('./RPG/classes/Ice.php');
