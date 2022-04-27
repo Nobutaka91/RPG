@@ -3,15 +3,15 @@
 class Enemy
 {
     private $name;
-    private $maxHitPoint = 100;
-    private $hitPoint = 100;
-    private $attackPoint = 30;
+    private $maxHitPoint;
+    private $hitPoint;
+    private $attackPoint;
 
-    public function __construct($name, $maxHitPoint, $attackPoint)
+    public function __construct($name, $maxHitPoint, $hitPoint,$attackPoint)
     {
         $this->name = $name;
+        $this->hitPoint = $hitPoint;
         $this->maxHitPoint = $maxHitPoint;
-        $this->hitPoint = $maxHitPoint;
         $this->attackPoint = $attackPoint;
     }
 

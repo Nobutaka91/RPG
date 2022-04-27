@@ -2,15 +2,14 @@
 
 class Ice extends Pokemon
 {
-    const MAX_HITPOINT = 80;
-    private $name;
-    private $hitPoint = 80;
-    private $attackPoint = 20;
-    private $specialAttack = 40;
+    private $maxHitPoint = 120; // 現在のHP
+    private $hitPoint = 120;
+    private $attackPoint = 40;
+    private $specialAttack = 50;
 
     public function __construct($name)
     {
-        parent::__construct($name, $this->hitPoint, $this->attackPoint, $this->specialAttack);
+        parent::__construct($name, $this->maxHitPoint, $this->hitPoint, $this->attackPoint, $this->specialAttack);
     }
 
     public function doAttack($enemies)

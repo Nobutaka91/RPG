@@ -2,15 +2,14 @@
 
 class Esper extends Pokemon
 {
-    const MAX_HITPOINT = 70;
-    private $name;
-    private $hitPoint = 70;
-    private $attackPoint = 10;
-    private $specialAttack = 60;
+    private $maxHitPoint = 90; // 現在のHP
+    private $hitPoint = 90;
+    private $attackPoint = 30;
+    private $specialAttack = 70;
 
     public function __construct($name)
     {
-        parent::__construct($name, $this->hitPoint, $this->attackPoint, $this->specialAttack);
+        parent::__construct($name, $this->maxHitPoint, $this->hitPoint, $this->attackPoint, $this->specialAttack);
     }
 
     public function doAttackEsper($enemies, $pokemons)

@@ -15,9 +15,9 @@ $members[] = new Ice("フリーザ");
 $members[] = new Esper("ミュウ");
 
 $enemies = array();
-$enemies[] = new Enemy("ギャラドス", 120, 20);
-$enemies[] = new Enemy("カイリュウ", 140, 25);
-$enemies[] = new Enemy("レックウザ", 160, 30);
+$enemies[] = new Enemy("ギャラドス", 100, 100, 20);
+$enemies[] = new Enemy("カイリュウ", 120, 120, 20);
+$enemies[] = new Enemy("レックウザ", 130, 130, 30);
 
 $turn = 1;
 

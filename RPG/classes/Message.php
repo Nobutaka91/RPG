@@ -12,12 +12,7 @@ class Message
     {
 
         foreach ($objects as $object) {
-
-            if (get_class($object) == "Enemy") {
-                echo $object->getName() . " : " . $object->getHitPoint() . "/" . $object->getMaxHitPoint() . "\n";
-            } else {
-                echo $object->getName() . " : " . $object->getHitPoint() . "/" . $object::MAX_HITPOINT . "\n";
-            }
+            echo $object->getName() . " : " . $object->getHitPoint() . "/" . $object->getMaxHitPoint() . "\n";
         }
         echo "\n";
     }

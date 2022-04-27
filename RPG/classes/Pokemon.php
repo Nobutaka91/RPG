@@ -2,14 +2,15 @@
 
 class Pokemon
 {
-    const MAX_HITPOINT = 100; // 最大HP
     private $name; // 自パーティのポケモンの名前
+    private $maxHitPoint = 100; // 現在のHP
     private $hitPoint = 100; // 現在のHP
     private $attackPoint = 10; // 攻撃力
 
-    public function __construct($name, $hitPoint = 100, $attackPoint = 10)
+    public function __construct($name, $maxHitPoint, $hitPoint, $attackPoint)
     {
         $this->name = $name;
+        $this->maxHitPoint = $maxHitPoint;
         $this->hitPoint = $hitPoint;
         $this->attackPoint = $attackPoint;
     }
@@ -43,8 +44,8 @@ class Pokemon
     public function recoveryDamage($heal, $target)
     {
         $this->hitPoint += $heal;
-        if ($this->hitPoint > $target::MAX_HITPOINT) {
-            $this->hitPoint = $target::MAX_HITPOINT;
+        if ($this->hitPoint > $target->maxHitPoint) {
+            $this->hitPoint = $target->maxHitPoint;
         }
     }
 
